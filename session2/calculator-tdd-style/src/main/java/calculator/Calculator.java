@@ -40,7 +40,7 @@ public class Calculator {
 	}
 
 	public int product(int a, int b) {
-		return a * b;
+		return (int) (a * b);
 	}
 
 	public short product(short a, short b) {
@@ -48,15 +48,15 @@ public class Calculator {
 	}
 
 	public long product(long a, long b) {
-		return a * b;
+		return (long) (a * b);
 	}
 
 	public float product(float a, float b) {
-		return a * b;
+		return (float) (a * b);
 	}
 
 	public double product(double a, double b) {
-		return a * b;
+		return (double) (a * b);
 	}
 
 	public double quotient(double a, double b) {
