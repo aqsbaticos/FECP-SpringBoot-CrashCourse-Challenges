@@ -33,4 +33,11 @@ class CalculatorTest {
 		double result = calculator.product(a,b);
 		assertEquals(2, result, 0.01);
 	}
+
+	@Test
+	void shouldReturnCorrectQuotient() {
+		double a = 2, b = 2, expected = 1;
+		double actual = calculator.quotient(a,b);
+		assertEquals(expected, actual, 0.01);
+	}
 }

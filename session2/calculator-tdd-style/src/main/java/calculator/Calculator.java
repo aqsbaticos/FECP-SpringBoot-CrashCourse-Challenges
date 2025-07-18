@@ -13,5 +13,8 @@ public class Calculator {
 	public double product(double a, double b) {
 		return a*b;
 	}
+	public double quotient(double a, double b) {
+		return a / b;
+	}
 
 }
