@@ -23,9 +23,20 @@ public class Calculator {
 	public double sum(double a, double b) {
 		return (double) (a+b);
 	}
-
+	public int difference(int a, int b) {
+		return (int) (a-b);
+	}
+	public short difference(short a, short b) {
+		return (short) (a-b);
+	}
+	public long difference(long a, long b) {
+		return (long) (a-b);
+	}
+	public float difference(float a, float b) {
+		return (float) (a-b);
+	}
 	public double difference(double a, double b) {
-		return a-b;
+		return (double) (a-b);
 	}
 
 	public double product(double a, double b) {
