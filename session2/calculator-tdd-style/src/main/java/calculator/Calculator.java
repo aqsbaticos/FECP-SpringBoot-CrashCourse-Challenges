@@ -59,14 +59,29 @@ public class Calculator {
 		return (double) (a * b);
 	}
 
+	public int quotient(int a, int b) {
+		if (b==0) throw new IllegalArgumentException();
+		return (int) (a / b);
+	}
+
+	public short quotient(short a, short b) {
+		if (b==0) throw new IllegalArgumentException();
+		return (short) (a / b);
+	}
+
+	public long quotient(long a, long b) {
+		if (b==0) throw new IllegalArgumentException();
+		return (long) (a / b);
+	}
+
+	public float quotient(float a, float b) {
+		if (b==0) throw new IllegalArgumentException();
+		return (float) (a / b);
+	}
+
 	public double quotient(double a, double b) {
-//		try {
-			return a / b;
-//		} catch (ArithmeticException e) {
-//			System.out.println("this causes an error");
-//			e.printStackTrace();
-//			throw new ArithmeticException();
-//		}
+		if (b==0) throw new IllegalArgumentException();
+		return (double) (a / b);
 	}
 
 }
