@@ -16,8 +16,16 @@ class CalculatorTest {
 
 	@Test
 	void shouldReturnCorrectSum() {
-		double result = calculator.sum(1,2);
-		assertEquals(3, result, 0.01);
+		int result1 = calculator.sum(1,2);
+		short result2 = calculator.sum((short) 1,(short) 2);
+		long result3 = calculator.sum(123L,246L);
+		float result4 = calculator.sum(1.1f,2.2f);
+		double result5 =calculator.sum(1,2);
+		assertEquals(3, result1);
+		assertEquals((short) 3, result2);
+		assertEquals(369L, result3);
+		assertEquals(3.3f, result4, 0.001);
+		assertEquals(3, result5, 0.001);
 	}
 
 	@Test
@@ -40,4 +48,12 @@ class CalculatorTest {
 		double actual = calculator.quotient(a,b);
 		assertEquals(expected, actual, 0.01);
 	}
+
+//	@Test
+//	void shouldThrowArithmeticExceptionWhenZeroDivisor() {
+//		double a = 10, b = 0;
+//		double actual = calculator.quotient(a,b);
+//		assertThrows(ArithmeticException.class, () -> System.out.print("Division by 0 should be invalid."));
+//	}
+
 }

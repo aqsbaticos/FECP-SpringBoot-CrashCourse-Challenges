@@ -2,8 +2,26 @@ package calculator;
 
 public class Calculator {
 
+	//	Methods should catch: int, long, short, float, double
+
+	public int sum(int a, int b) {
+		return (int) (a+b);
+	}
+
+	public short sum(short a, short b) {
+		return (short) (a+b);
+	}
+
+	public long sum(long a, long b) {
+		return (long) Long.sum(a,b);
+	}
+
+	public float sum(float a, float b) {
+		return (float) (a+b);
+	}
+
 	public double sum(double a, double b) {
-		return a+b;
+		return (double) (a+b);
 	}
 
 	public double difference(double a, double b) {
@@ -14,7 +32,13 @@ public class Calculator {
 		return a*b;
 	}
 	public double quotient(double a, double b) {
-		return a / b;
+//		try {
+			return a / b;
+//		} catch (ArithmeticException e) {
+//			System.out.println("this causes an error");
+//			e.printStackTrace();
+//			throw new ArithmeticException();
+//		}
 	}
 
 }
