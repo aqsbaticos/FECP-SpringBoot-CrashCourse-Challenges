@@ -39,9 +39,26 @@ public class Calculator {
 		return (double) (a-b);
 	}
 
-	public double product(double a, double b) {
-		return a*b;
+	public int product(int a, int b) {
+		return a * b;
 	}
+
+	public short product(short a, short b) {
+		return (short) (a * b);
+	}
+
+	public long product(long a, long b) {
+		return a * b;
+	}
+
+	public float product(float a, float b) {
+		return a * b;
+	}
+
+	public double product(double a, double b) {
+		return a * b;
+	}
+
 	public double quotient(double a, double b) {
 //		try {
 			return a / b;

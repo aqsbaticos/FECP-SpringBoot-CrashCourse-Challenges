@@ -44,9 +44,16 @@ class CalculatorTest {
 
 	@Test
 	void shouldReturnCorrectProduct() {
-		double a = 1, b = 2, expected = 2;
-		double result = calculator.product(a,b);
-		assertEquals(2, result, 0.01);
+		int result1 = calculator.product(1,2);
+		short result2 = calculator.product((short) 1,(short) 2);
+		long result3 = calculator.product(13,12L);
+		float result4 = calculator.product(1.1f,2.2f);
+		double result5 =calculator.product(1,2);
+		assertEquals(2, result1);
+		assertEquals((short) 2, result2);
+		assertEquals(156L, result3);
+		assertEquals(2.42f, result4, 0.001);
+		assertEquals(2, result5, 0.001);
 	}
 
 	@Test
