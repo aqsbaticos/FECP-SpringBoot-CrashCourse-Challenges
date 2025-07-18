@@ -51,16 +51,27 @@ class CalculatorTest {
 
 	@Test
 	void shouldReturnCorrectQuotient() {
-		double a = 2, b = 2, expected = 1;
-		double actual = calculator.quotient(a,b);
-		assertEquals(expected, actual, 0.01);
+		int a1 = 2, b1 = 2, expected1 = 1;
+		short a2 = (short) 2, b2 = (short) 2, expected2 = 1;
+		long a3 = 2L, b3 = 2L, expected3 = 1L;
+		float a4 = 2.0f, b4 = 2.0f, expected4 = 1.0f;
+		double a5 = 2, b5 = 2, expected5 = 1;
+		double actual1 = calculator.quotient(a1,b1);
+		double actual2 = calculator.quotient(a2,b2);
+		double actual3 = calculator.quotient(a3,b3);
+		double actual4 = calculator.quotient(a4,b4);
+		double actual5 = calculator.quotient(a5,b5);
+		assertEquals(expected1, actual1);
+		assertEquals(expected2, actual2);
+		assertEquals(expected3, actual3);
+		assertEquals(expected4, actual4, 0.001);
+		assertEquals(expected5, actual5, 0.001);
 	}
 
-//	@Test
-//	void shouldThrowArithmeticExceptionWhenZeroDivisor() {
-//		double a = 10, b = 0;
-//		double actual = calculator.quotient(a,b);
-//		assertThrows(ArithmeticException.class, () -> System.out.print("Division by 0 should be invalid."));
-//	}
+	@Test
+	void shouldThrowIllegalArgumentExceptionWhenZeroDivisor() {
+		int a = 10, b = 0;
+		assertThrows(IllegalArgumentException.class, () -> calculator.quotient(a,b));
+	}
 
 }
