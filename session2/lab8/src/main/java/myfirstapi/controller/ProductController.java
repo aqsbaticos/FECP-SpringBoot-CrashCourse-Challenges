@@ -1,4 +1,4 @@
-package com.example.demo.myfirstapi.controller;
+package myfirstapi.controller;
 
 import myfirstapi.model.Product; // Import your Product model
 import myfirstapi.repository.ProductRepository; // Import your ProductRepository
@@ -15,11 +15,6 @@ public class ProductController {
 	// Constructor Injection: Spring will automatically provide ProductRepository here
 	public ProductController(ProductRepository productRepository) {
 		this.productRepository = productRepository;
-	}
-
-	@GetMapping("/")
-	public void test() {
-		System.out.println("This API is live.");
 	}
 
 	// We will add methods here in the next steps
