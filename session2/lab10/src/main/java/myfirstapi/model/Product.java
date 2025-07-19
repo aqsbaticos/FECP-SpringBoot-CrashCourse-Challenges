@@ -13,6 +13,9 @@ public class Product {
 	private String name;
 	private double price;
 
+	//	Added for Lab 10: Create POST Product Endpoint
+	public Product() {}
+
 	// Constructor to create new Product objects (without ID initially)
 	public Product(String name, double price) {
 		this.name = name;
