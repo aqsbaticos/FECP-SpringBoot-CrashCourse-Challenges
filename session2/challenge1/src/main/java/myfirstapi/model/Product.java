@@ -4,13 +4,22 @@ import java.awt.image.AreaAveragingScaleFilter;
 import java.util.ArrayList;
 import java.util.Objects; // Used for Objects.hash and Objects.equals
 
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+
 public class Product {
 
 	//	In-Memory Database
 	private ArrayList<Product> products = new ArrayList<>();
 
 	private Long id;
+
+	@NotNull
+	@Size(min=3, max=50)
 	private String name;
+
+	@Min(0)
 	private double price;
 
 	//	Added for Lab 10: Create POST Product Endpoint
