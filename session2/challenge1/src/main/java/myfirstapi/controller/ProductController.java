@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 @RestController // This annotation makes it a REST controller
@@ -27,18 +28,10 @@ public class ProductController {
 	}
 
 	@GetMapping("/products/{id}") // {id} is a path variable
-	public ResponseEntity<Product> getProductById(@PathVariable Long id) {
-		// Find the product by ID using the repository
-		Optional<Product> product = productRepository.findById(id);
-
-		// Check if the product was found
-		if (product.isPresent()) {
-			// If found, return it with HTTP 200 OK
-			return ResponseEntity.ok(product.get()); // .get() gets the Product from Optional
-		} else {
-			// If not found, return HTTP 404 Not Found
-			return ResponseEntity.notFound().build();
-		}
+	public ResponseEntity<Product> getProductById(@Valid @PathVariable Long id) {
+		Product product = productRepository.findById(id)
+				.orElseThrow(() -> new NoSuchElementException("Product with ID " + id + " not found"));
+		return ResponseEntity.ok(product);
 	}
 
 	@PostMapping("/products") // Maps HTTP POST requests to /products
